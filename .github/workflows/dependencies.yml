@@ -8,7 +8,7 @@ jobs:
   auto-update-dependencies:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955  # actions/checkout@v4
       - uses: ./.github/actions/python-poetry-env
 
       - name: Install tabulate
@@ -46,7 +46,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: ${{ steps.check_for_outdated_dependencies.outputs.body != 0 }}
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@18f7dc018cc2cd597073088f7c7591b9d1c02672  # peter-evans/create-pull-request@v3
         with:
           token: ${{ env.GITHUB_TOKEN }}
           commit-message: >-
